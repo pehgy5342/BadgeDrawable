@@ -9,7 +9,6 @@ import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,18 +16,19 @@ class MainActivity : AppCompatActivity() {
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
         val btn_clear = findViewById<Button>(R.id.btn_clearNumber)
 
-        //標點
         val badge = tabLayout.getTabAt(0)?.orCreateBadge
         badge?.isVisible = true
+        //標點
         badge?.backgroundColor = getColor(R.color.red)
 
-        //數字
+
         val badge1 = tabLayout.getTabAt(1)?.orCreateBadge
         badge1?.isVisible = true
         //文字顏色
         badge1?.badgeTextColor = Color.WHITE
         //設定顯示位置(右下)
         badge1?.badgeGravity = BadgeDrawable.BOTTOM_END
+        //數字
         badge1?.number = 10
 
         val badge2 = tabLayout.getTabAt(2)?.orCreateBadge
@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
             badge2?.isVisible = false
         }
     }
-
 }
 
 
